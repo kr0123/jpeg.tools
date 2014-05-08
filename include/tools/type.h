@@ -10,12 +10,12 @@
 
 #ifndef SINT32
 //signed 32-bit integer
-#define SINT32	long
+#define SINT32	int
 #endif
 
 #ifndef UINT32
 //unsigned 32-bit integer
-#define UINT32	unsigned long 
+#define UINT32	unsigned int 
 #endif
 
 #ifndef SINT8

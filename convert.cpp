@@ -35,6 +35,15 @@ int JpegDecoder(char *src, int len, char *dst)
 int main( int argc, char *argv[] )
 {
 	int ret = 0;
+	CGeneralTools tools;
+
+	tools.DataConvert( "RGB32.bmp", "RGB32.rgb", 320, 240, BMP, RGB32, 1, 0, 80 );
+	tools.DataConvert( "RGB32.rgb", "RGB24.rgb", 320, 240, RGB32, RGB24, 1, 0, 80 );
+	tools.DataConvert( "RGB24.rgb", "RGB24-1.jpg", 320, 240, RGB24, JPEG444, 1, 0, 80 );
+	tools.DataConvert( "RGB24.rgb", "RGB24.yuv", 320, 240, RGB24, YUV444, 1, 0, 80 );
+	tools.DataConvert( "RGB24.yuv", "RGB24-blk.yuv", 320, 240, YUV444, YUV444BLK, 1, 0, 80 );
+	tools.DataConvert( "RGB24-blk.yuv", "RGB24-2.jpg", 320, 240, YUV444BLK, JPEG444, 1, 0, 80 );
+
 
 	return ret;
 }

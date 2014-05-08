@@ -21,12 +21,12 @@ CXXFLAGS += $(FORCE_STATIC) -Wall -lc
 #CXXFLAGS += -g $(FORCE_STATIC) -Wl,--whole-archive -lpthread -Wl,--no-whole-archive -lc
 LDFLAGS  :=
 
-C_SRC    := $(shell find $(TOP_DIR) -maxdepth 4 -name '*.c')
+C_SRC    := $(shell find $(TOP_DIR) -maxdepth 6 -name '*.c')
 C_OBJS   := $(C_SRC:%.c=%.o)
 CXX_SRC    := $(shell find $(TOP_DIR) -maxdepth 4 -name '*.$(CXX_SURFIX)')
 CXX_OBJS := $(CXX_SRC:%.$(CXX_SURFIX)=%.o)
 
-TARGET := jpeg.tools
+TARGET := jpeg.convert
 
 .PHONY: all
 all : $(TARGET)

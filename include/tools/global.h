@@ -108,7 +108,7 @@ typedef struct tag_BITMAPFILEHEADER
 #define BI_BITFIELDS  3L
 
 typedef struct tag_BITMAPINFOHEADER
-{ 
+{
 	UINT32	biSize; 
 	SINT32	biWidth; 
 	SINT32	biHeight; 
