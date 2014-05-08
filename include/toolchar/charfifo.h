@@ -2,17 +2,13 @@
 #define _CHARFIFO_H_
 
 
-#ifndef TOOLCHAR_DLL
-	#define TOOLCHAR_DLL  __declspec(dllimport)
-#endif
-
 #include "charnode.h"
 #include "toolbuf/fifobuf.h"
 
 
 //=================================
 
-class TOOLCHAR_DLL CCharFifo : public CFifoBuf
+class CCharFifo : public CFifoBuf
 {
 public:
 	CCharFifo(void);
@@ -109,5 +105,5 @@ private:
 	int		m_line;
 };
 
-#endif
 
+#endif

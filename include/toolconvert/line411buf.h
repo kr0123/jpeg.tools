@@ -2,14 +2,9 @@
 #define _LINE411_BUFFER_H_
 
 
-#ifndef TOOLCONVERT_DLL
-	#define TOOLCONVERT_DLL  __declspec(dllimport)
-#endif
-
-
 #include "toolbuf/linebuf.h"
 
-class TOOLCONVERT_DLL CLine411Buf : public CLineBuf
+class CLine411Buf : public CLineBuf
 {
 public:
 	CLine411Buf(int width = DEFAULT_LINEBUF_WIDTH, int edge = 4, int unit = 1);
@@ -31,6 +26,5 @@ private:
 	int		m_format;
 };
 
+
 #endif
-
-

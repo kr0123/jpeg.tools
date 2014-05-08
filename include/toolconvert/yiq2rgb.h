@@ -2,17 +2,13 @@
 #define _YIQ2RGB_H_
 
 
-#ifndef TOOLCONVERT_DLL
-	#define TOOLCONVERT_DLL  __declspec(dllimport)
-#endif
-
 #include "toolbuf/fifobuf.h"
 
 //=============== class CYiq2rgb =================
 //#define IMAGEWIDTH 640
 //#define IMAGEHEIGHT 480
 
-class TOOLCONVERT_DLL CYiq2rgb : public CFifoBuf
+class CYiq2rgb : public CFifoBuf
 {
 public:
 	CYiq2rgb(int cap = 256, int width = 640, int height = 480);
@@ -46,6 +42,5 @@ private:
 	int  m_imageHight;
 };
 
+
 #endif
-
-

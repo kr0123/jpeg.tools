@@ -3,9 +3,6 @@
 #ifndef _TOOLS_GLOBAL_H_
 #define _TOOLS_GLOBAL_H_
 
-#ifndef TOOLS_DLL
-	#define TOOLS_DLL  __declspec(dllimport)
-#endif
 
 #include <stdarg.h>
 
@@ -291,33 +288,31 @@ typedef struct tag_TBitMap
 } TBitMap, *PTBitMap; 
 
 
+extern const char *gImageStreamType[];
+extern const char gTotalImageStreamType;
+extern const int gImgStreamOrder[][6];
+extern const int gImageProp[];
+extern const char *gRotateMode[];
+extern const char gTotalRotateMode;
+extern const char *gOvlpMode[];
+extern const char gTotalOvlpMode;
+extern const char *gOverMode[];
+extern const char gTotalOverMode;
+extern const char *gJpegFmt[];
+extern const char gTotalJpegFmt;
+extern const char *gAudStreamType[];
+extern const char gTotalAudStreamType;
+extern const char *gCtrlStreamType[];
+extern const char gTotalCtrlStreamType;
+extern const char *gSystemStreamType[];
+extern const char gTotalSystemStreamType;
+extern const char *gStreamClassType[];
+extern const char gTotalStreamClassType;
 
-extern TOOLS_DLL const char *gImageStreamType[];
-extern TOOLS_DLL const char gTotalImageStreamType;
-extern TOOLS_DLL const int gImgStreamOrder[][6];
-extern TOOLS_DLL const int gImageProp[];
-extern TOOLS_DLL const char *gRotateMode[];
-extern TOOLS_DLL const char gTotalRotateMode;
-extern TOOLS_DLL const char *gOvlpMode[];
-extern TOOLS_DLL const char gTotalOvlpMode;
-extern TOOLS_DLL const char *gOverMode[];
-extern TOOLS_DLL const char gTotalOverMode;
-extern TOOLS_DLL const char *gJpegFmt[];
-extern TOOLS_DLL const char gTotalJpegFmt;
-extern TOOLS_DLL const char *gAudStreamType[];
-extern TOOLS_DLL const char gTotalAudStreamType;
-extern TOOLS_DLL const char *gCtrlStreamType[];
-extern TOOLS_DLL const char gTotalCtrlStreamType;
-extern TOOLS_DLL const char *gSystemStreamType[];
-extern TOOLS_DLL const char gTotalSystemStreamType;
-extern TOOLS_DLL const char *gStreamClassType[];
-extern TOOLS_DLL const char gTotalStreamClassType;
-
-extern TOOLS_DLL const int gRegTotalType;
-extern TOOLS_DLL const char *gRegType[];
+extern const int gRegTotalType;
+extern const char *gRegType[];
 
 const int  gTotalNoiseTable = 17;
 
+
 #endif
-
-

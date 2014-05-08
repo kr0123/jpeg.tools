@@ -2,18 +2,11 @@
 #define _COMPLEXTOOLS_H_
 
 
-
-#ifndef TOOLMATH_DLL
-	#define TOOLMATH_DLL  __declspec(dllimport)
-#endif
-
-
-
 #define TEMPLATE_COMPLEX	template <class T1>
 #define CCOMPLEXTOOL		CComplexTool <T1>
 
 template <class T1 = int>
-class TOOLMATH_DLL CComplexTool
+class CComplexTool
 {
 public:
 	CComplexTool(int real = 0, int img = 0);
@@ -106,7 +99,6 @@ void CCOMPLEXTOOL::multi(T1 real, T1 img)
 TEMPLATE_COMPLEX
 void CCOMPLEXTOOL::divc(T1 a)
 {
-	//ASSERT(a);
 	if(a == 0)
 		a = 1;
 	this->m_img /= a;
@@ -124,5 +116,6 @@ void CCOMPLEXTOOL::operator -= (T1 a)
 {
 	this->m_real -= a;
 }
+
 
 #endif

@@ -2,16 +2,11 @@
 #define _NORMALTOOLS_H_
 
 
-#ifndef TOOLCONVERT_DLL
-	#define TOOLCONVERT_DLL  __declspec(dllimport)
-#endif
-
-
 #include "toolchar/stringtools.h"
 #include "toolmath/baseconvert.h"
 #include "toolfile/dbugtools.h"
 
-class TOOLCONVERT_DLL CNormalTools : public CStringTools, public CBaseConvert
+class CNormalTools : public CStringTools, public CBaseConvert
 {
 public:		//file process
 	void	ConvertHeader2RegList(char *src, char *dest);
@@ -38,5 +33,3 @@ private:
 
 
 #endif
-
-

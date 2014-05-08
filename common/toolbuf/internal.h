@@ -1,12 +1,6 @@
 #ifndef _TOOLBUF_INTERNAL_H_
 #define _TOOLBUF_INTERNAL_H_
 
-#ifdef _WINDLL
-	#define TOOLBUF_DLL  __declspec(dllexport)
-#endif
-
-#pragma comment(lib, "tools.lib")
-
 
 #include "toolbuf/bufferbase.h"
 #include "toolbuf/srambuf.h"
@@ -24,5 +18,6 @@
 #include "toolbuf/mempool.h"
 #include "toolbuf/ufifobuf.h"
 #include "toolbuf/yuvline.h"
+
 
 #endif

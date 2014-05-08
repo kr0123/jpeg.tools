@@ -2,10 +2,6 @@
 #define _REPEAT_LINEFIFO_BUFFER_H_
 
 
-#ifndef TOOLBUF_DLL
-	#define TOOLBUF_DLL  __declspec(dllimport)
-#endif
-
 enum REPLINEFIFOSTATEenum
 {
 	REPLINE_IDLE,
@@ -15,7 +11,7 @@ enum REPLINEFIFOSTATEenum
 
 #include "linefifo.h"
 
-class TOOLBUF_DLL CRepLineFifo : public CLineFifo
+class CRepLineFifo : public CLineFifo
 {
 public:
 	CRepLineFifo(int width = BUFFER_DEFAULT_SIZE, int unit = 1);
@@ -36,6 +32,5 @@ private:
 	int		m_flag;
 };
 
+
 #endif
-
-

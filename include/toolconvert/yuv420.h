@@ -2,13 +2,9 @@
 #define _YUV420_H_
 
 
-#ifndef TOOLCONVERT_DLL
-	#define TOOLCONVERT_DLL  __declspec(dllimport)
-#endif
-
 #include "yuv444.h"
 
-class TOOLCONVERT_DLL CYuv420 : public CYuv444
+class CYuv420 : public CYuv444
 {
 public:
 	int Rgb2Yyuv(char *src, char *dst, int width, int cap = 256, int unit = 1);
@@ -93,7 +89,6 @@ public:
 	int Blk2Rgb24(char *src, char *dest, int width, int height);
 	int Blk2Jpeg(char *src, char *dest, int width, int height, int qf = 40);
 	int Rgb2Jpeg420(char *src, char *dest, int width, int height, int unit = 1, int qf = 40);
-	int Blk2Mpeg2I(char *src, char *dest, int width, int height);
 
 public:
 	int getVwc(int width, int height);
@@ -123,6 +118,5 @@ public:
 
 //typedef int (CYuv420::*Rgb2YuvCall)(char *src, char *dst, int width, int cap, int unit);
 
+
 #endif
-
-

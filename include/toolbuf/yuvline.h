@@ -2,16 +2,9 @@
 #define _YUVLINE_BUFFER_H_
 
 
-#ifndef TOOLBUF_DLL
-	#define TOOLBUF_DLL  __declspec(dllimport)
-#endif
-
-
 #include "linefifo.h"
 
-//==================================
-
-class TOOLBUF_DLL CYuv400Fifo : public CLineFifo
+class CYuv400Fifo : public CLineFifo
 {
 public:
 	CYuv400Fifo(int width = BUFFER_DEFAULT_SIZE, int unit = 1);
@@ -38,7 +31,7 @@ protected:
 
 //==================================
 
-class TOOLBUF_DLL CYuv444Fifo : public CYuv400Fifo
+class CYuv444Fifo : public CYuv400Fifo
 {
 public:
 	CYuv444Fifo(int width = BUFFER_DEFAULT_SIZE, int unit = 1);
@@ -59,7 +52,7 @@ public:
 
 //==================================
 
-class TOOLBUF_DLL CYuv411Fifo : public CYuv400Fifo
+class CYuv411Fifo : public CYuv400Fifo
 {
 public:
 	CYuv411Fifo(int width = BUFFER_DEFAULT_SIZE, int unit = 1);
@@ -80,7 +73,7 @@ public:
 
 //==================================
 
-class TOOLBUF_DLL CYuv422Fifo : public CYuv400Fifo
+class CYuv422Fifo : public CYuv400Fifo
 {
 public:
 	CYuv422Fifo(int width = BUFFER_DEFAULT_SIZE, int unit = 1);
@@ -101,7 +94,7 @@ public:
 
 //==================================
 
-class TOOLBUF_DLL CYuv422_UFifo : public CYuv400Fifo
+class CYuv422_UFifo : public CYuv400Fifo
 {
 public:
 	CYuv422_UFifo(int width = BUFFER_DEFAULT_SIZE, int unit = 1);
@@ -122,7 +115,7 @@ public:
 
 //==================================
 
-class TOOLBUF_DLL CYuv422_VFifo : public CYuv400Fifo
+class CYuv422_VFifo : public CYuv400Fifo
 {
 public:
 	CYuv422_VFifo(int width = BUFFER_DEFAULT_SIZE, int unit = 1);
@@ -143,7 +136,7 @@ public:
 
 //==================================
 
-class TOOLBUF_DLL CYuv444_UFifo : public CYuv400Fifo
+class CYuv444_UFifo : public CYuv400Fifo
 {
 public:
 	CYuv444_UFifo(int width = BUFFER_DEFAULT_SIZE, int unit = 1);
@@ -160,7 +153,7 @@ public:
 
 //==================================
 
-class TOOLBUF_DLL CYuv444_VFifo : public CYuv400Fifo
+class CYuv444_VFifo : public CYuv400Fifo
 {
 public:
 	CYuv444_VFifo(int width = BUFFER_DEFAULT_SIZE, int unit = 1);
@@ -177,7 +170,7 @@ public:
 
 //==================================
 
-class TOOLBUF_DLL CYuv411_UFifo : public CYuv400Fifo
+class CYuv411_UFifo : public CYuv400Fifo
 {
 public:
 	CYuv411_UFifo(int width = BUFFER_DEFAULT_SIZE, int unit = 1);
@@ -198,7 +191,7 @@ public:
 
 //==================================
 
-class TOOLBUF_DLL CYuv411_VFifo : public CYuv400Fifo
+class CYuv411_VFifo : public CYuv400Fifo
 {
 public:
 	CYuv411_VFifo(int width = BUFFER_DEFAULT_SIZE, int unit = 1);
@@ -219,5 +212,3 @@ public:
 
 
 #endif
-
-

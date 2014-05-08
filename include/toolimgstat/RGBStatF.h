@@ -2,14 +2,9 @@
 #define __TOOLIMGSTAT_RGBSTATF_H__
 
 
-#ifndef TOOLIMGSTAT_DLL
-	#define TOOLIMGSTAT_DLL  __declspec(dllimport)
-#endif
-
-
 #include "RGBStat.h"
 
-class TOOLIMGSTAT_DLL CRgbStatF : public CRgbStat
+class CRgbStatF : public CRgbStat
 {
 public:
 	CRgbStatF(void);
@@ -27,5 +22,6 @@ protected:
 	void updateRgb(int * des, int * ndes);
 	*/
 };
+
 
 #endif

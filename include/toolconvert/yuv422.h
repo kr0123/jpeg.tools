@@ -2,14 +2,10 @@
 #define _YUV422_H_
 
 
-#ifndef TOOLCONVERT_DLL
-	#define TOOLCONVERT_DLL  __declspec(dllimport)
-#endif
-
 #include "yuv444.h"
 #include "tooljpg/jpegencbase.h"
 
-class TOOLCONVERT_DLL CYuv422 : public CYuv444
+class CYuv422 : public CYuv444
 {
 public:
 	int Rgb2Yyuv(char *src, char *dst, int cap = 256, int unit = 1);
@@ -153,5 +149,3 @@ public:
 
 
 #endif
-
-

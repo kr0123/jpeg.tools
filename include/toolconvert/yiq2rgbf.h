@@ -2,14 +2,10 @@
 #define _YIQ2RGBF_H_
 
 
-#ifndef TOOLCONVERT_DLL
-	#define TOOLCONVERT_DLL  __declspec(dllimport)
-#endif
-
 #include "yiq2rgb.h"
 #include "toolfile/dbugtools.h"
 
-class TOOLCONVERT_DLL CYiq2rgbF : public CYiq2rgb
+class CYiq2rgbF : public CYiq2rgb
 {
 public:
 	CYiq2rgbF();
@@ -21,7 +17,6 @@ public:
 private:
 	CDbugTools	m_dbug;
 };
-
 
 
 #endif

@@ -3485,7 +3485,6 @@ void CGeneralTools::Yuv420BlkConvert(char *src, char *dest, int width, int heigh
 		CYuv420F::Blk2Jpeg(src, dest, width, height);
 		break;
 	case MPEG2IFRM420:
-		CYuv420F::Blk2Mpeg2I(src, dest, width, height);
 		break;
 	case MPEG2IFRM422:
 	case MPEG2IFRM444:
@@ -4990,8 +4989,14 @@ int CGeneralTools::Rgb24_YuvBlkBuffer(char *src, char *dest, int width, int heig
 				this->m_dbug.PrintMsg("Image width & height must be even\n");
 				return 0;
 			}
-			
+
+#if 1
+			CYuv444 *yuv444 = new CYuv444;
+			dstbuflen = yuv444->Rgb2Yuv444Blk(src, dest, width, height, cap, 1);
+			delete yuv444;
+#else
 			dstbuflen = CYuv444::Rgb2Yuv444Blk(src, dest, width, height, cap, 1);
+#endif
 			break;
 		}
 	default:
@@ -5107,7 +5112,15 @@ int CGeneralTools::Rgb24_JpegBuffer(char *src, char *dest, int width, int height
 			this->m_dbug.PrintMsg("Image width & height must be even\n");
 			return 0;
 		}
+#if 1
+		{
+			CYuv444 *yuv444 = new CYuv444;
+			len = yuv444->Rgb2Jpeg444(src, dest, width, height, 1, qf);
+			delete yuv444;			
+		}
+#else
 		len = CYuv444::Rgb2Jpeg444(src, dest, width, height, 1, qf);
+#endif
 		break;
 	default:
 		break;		
@@ -5323,10 +5336,8 @@ void CGeneralTools::DataConvert(char *src, char *dest, int width, int height,
 	case MPEG2IFRM420:
 	case MPEG2IFRM422:
 	case MPEG2IFRM444:
-		this->Mpeg2Convert(src, dest);
 		break;
 	case MPEG4_FRM:
-		this->Mpeg4Convert(src, dest);
 		break;
 
 	default:
@@ -5597,7 +5608,15 @@ void CGeneralTools::Blk2Bmp(char *src, char *dest, int width, int height, int sr
 			this->m_dbug.PrintMsg("Image width & height must be even\n");
 			return;
 		}		
+#if 1
+		{
+			CYuv444 *yuv444 = new CYuv444;
+			yuv444->Blk2Rgb24(srcbuf.m_buf, dstbuf.m_buf, width, height);
+			delete yuv444;			
+		}
+#else
 		CYuv444::Blk2Rgb24(srcbuf.m_buf, dstbuf.m_buf, width, height);
+#endif
 		break;
 	default:
 		return;
@@ -5660,7 +5679,15 @@ void CGeneralTools::Jpeg2Rgb24(char *src, char *dest)
 		ncount = CYuv400::Blk2Rgb24(dstbuf.m_buf, srcbuf.m_buf, width, height);		
 		break;
 	case YUV444BLK:
+#if 1
+		{
+			CYuv444 *yuv444 = new CYuv444;
+			ncount = yuv444->Blk2Rgb24(dstbuf.m_buf, srcbuf.m_buf, width, height);
+			delete yuv444;			
+		}
+#else
 		ncount = CYuv444::Blk2Rgb24(dstbuf.m_buf, srcbuf.m_buf, width, height);
+#endif
 		break;		
 	default:
 		break;
@@ -5716,7 +5743,15 @@ void CGeneralTools::Jpeg2Bmp(char *src, char *dest)
 		ncount = CYuv400::Blk2Rgb24(dstbuf.m_buf, srcbuf.m_buf, width, height);		
 		break;
 	case YUV444BLK:
+#if 1
+		{
+			CYuv444 *yuv444 = new CYuv444;
+			ncount = yuv444->Blk2Rgb24(dstbuf.m_buf, srcbuf.m_buf, width, height);
+			delete yuv444;			
+		}
+#else
 		ncount = CYuv444::Blk2Rgb24(dstbuf.m_buf, srcbuf.m_buf, width, height);
+#endif
 		break;		
 	default:
 		break;
@@ -6162,7 +6197,13 @@ int CGeneralTools::UnitConvert(int val, int srcfmt, int dstfmt)
 			CRaw2Rgb::Rgb24_Rgb32((char *)&val, (char *)&val1);
 			break;
 		case YUV444:
-			val1 = CYuv2Rgb::bgr2yuv(val);
+			{
+				CYuv2Rgb *yuv2rgb = new CYuv2Rgb;
+				val1 = yuv2rgb->bgr2yuv(val);
+				delete yuv2rgb;
+
+//				val1 = CYuv2Rgb::bgr2yuv(val);
+			}
 			break;
 		default:
 			break;
@@ -6170,7 +6211,13 @@ int CGeneralTools::UnitConvert(int val, int srcfmt, int dstfmt)
 		break;
 	case YUV444:
 		if(dstfmt == RGB24)
-			val1 = CYuv2Rgb::yuv2bgr(val);
+		{
+			CYuv2Rgb *yuv2rgb = new CYuv2Rgb;
+			val1 = yuv2rgb->bgr2yuv(val);
+			delete yuv2rgb;
+
+//			val1 = CYuv2Rgb::bgr2yuv(val);
+		}
 		break;
 	default:
 		break;
@@ -6275,36 +6322,6 @@ void CGeneralTools::JpegConvert(char *src, char *dest, int dstfmt)
 		break;
 	}	
 }
-
-//***************************************************//
-
-//===============================================
-//
-//		Mpeg2 I frame convert
-//
-//================================================
-
-//***************************************************//
-void CGeneralTools::Mpeg2Convert(char *src, char *dest)
-{
-	CMpeg2IF::Mpeg2Blk(src, dest);
-}
-
-
-/***************************************************/
-
-//===============================================
-//
-//		Mpeg4 frame convert
-//
-//================================================
-
-//***************************************************//
-void CGeneralTools::Mpeg4Convert(char *src, char *dest)
-{
-	CMpeg4F::Mpeg4Blk(src, dest);
-}
-
 
 /***************************************************/
 

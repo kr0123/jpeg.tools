@@ -1,5 +1,8 @@
 #include "toolconvert/generaltools.h"
-#include "jpgconvert.h"
+#include "tooljpg/jpegenc.h"
+#include "tooljpg/jpegdec.h"
+
+#include "convert.h"
 
 int JpegEncoder(char *src, char *dst, int width, int height, int qf, int format)
 {

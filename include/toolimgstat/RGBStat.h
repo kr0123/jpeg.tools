@@ -2,16 +2,10 @@
 #define __TOOLIMGSTAT_RGBSTAT_H__
 
 
-
-#ifndef TOOLIMGSTAT_DLL
-	#define TOOLIMGSTAT_DLL  __declspec(dllimport)
-#endif
-
-
 #include "toolmath/baseconvert.h"
 #include "toolfile/dbugtools.h"
 
-class TOOLIMGSTAT_DLL CRgbStat : public CBaseConvert
+class CRgbStat : public CBaseConvert
 {
 public:
 	CRgbStat(void);
@@ -32,5 +26,6 @@ protected:
 	int m_nCountG;
 	int m_nCountB;
 };
+
 
 #endif

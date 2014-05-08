@@ -2,14 +2,9 @@
 #define _FIFO_BUFFER_H_
 
 
-#ifndef TOOLBUF_DLL
-	#define TOOLBUF_DLL  __declspec(dllimport)
-#endif
-
-
 #include "srambuf.h"
 
-class TOOLBUF_DLL CFifoBuf : public CSramBuf
+class CFifoBuf : public CSramBuf
 {
 public:
 	CFifoBuf(int size = BUFFER_DEFAULT_SIZE, int unit = 1);
@@ -49,6 +44,5 @@ private:
 	int		m_tempwp;
 };
 
+
 #endif
-
-

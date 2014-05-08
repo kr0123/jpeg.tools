@@ -2,12 +2,6 @@
 #define _CMODEL_ALG_BASE_H_
 
 
-#ifndef TOOLS_DLL
-	#define TOOLS_DLL  __declspec(dllimport)
-#endif
-
-
-
 typedef struct tag_TStreamCfg
 {
 	int fmt;
@@ -16,7 +10,7 @@ typedef struct tag_TStreamCfg
 	int height;
 } TStreamCfg, *PTStreamCfg;
 
-class TOOLS_DLL CAlgBase
+class CAlgBase
 {
 public:
 	CAlgBase(void);
@@ -30,7 +24,7 @@ public:
 	virtual int  GetOutputCfg(int index, TStreamCfg *cfg);
 };
 
-class TOOLS_DLL CImageAlgBase : public CAlgBase
+class CImageAlgBase : public CAlgBase
 {
 public:
 	CImageAlgBase(void);
@@ -43,5 +37,6 @@ public:
 public:
 	int		m_outline;
 };
+
 
 #endif

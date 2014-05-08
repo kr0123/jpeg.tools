@@ -2,10 +2,6 @@
 #define _TREEBASE_H_
 
 
-#ifndef TOOLTREE_DLL
-	#define TOOLTREE_DLL  __declspec(dllimport)
-#endif
-
 #include "toolchain/chaintools.h"
 #include "toolfile/filebin.h"
 
@@ -17,7 +13,7 @@ enum LEAFVALUETYPEenum
 	LEAF_INVALID
 };
 
-class TOOLTREE_DLL CLeafBase
+class CLeafBase
 {
 public:
 	CLeafBase(void);
@@ -36,7 +32,7 @@ private:
 
 //==========================
 
-class TOOLTREE_DLL CKeyLeaf : public CLeafBase
+class CKeyLeaf : public CLeafBase
 {
 public:
 	CKeyLeaf(void);
@@ -66,7 +62,7 @@ protected:
 
 //======================================
 
-class TOOLTREE_DLL CCntLeaf : public CKeyLeaf
+class CCntLeaf : public CKeyLeaf
 {
 public:
 	CCntLeaf(void);
@@ -88,7 +84,7 @@ private:
 
 //============================================
 
-class TOOLTREE_DLL CKeyTree : public CKeyLeaf
+class CKeyTree : public CKeyLeaf
 {
 public:
 	CKeyTree(void);
@@ -122,5 +118,5 @@ private:
 	CChainTool<CKeyTree> m_fold;
 };
 
-#endif
 
+#endif

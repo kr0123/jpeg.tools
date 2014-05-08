@@ -2,14 +2,9 @@
 #define _BITFIFO_H_
 
 
-#ifndef TOOLBIT_DLL
-	#define TOOLBIT_DLL  __declspec(dllimport)
-#endif
-
-
 #include "bitstream.h"
 
-class TOOLBIT_DLL CBitFifo : public CBitStream
+class CBitFifo : public CBitStream
 {
 public:
 	CBitFifo(int size = BUFFER_DEFAULT_SIZE, int order = SMALLBIT_ORDER);
@@ -49,6 +44,5 @@ protected:
 	int		m_wpoint;
 };
 
+
 #endif
-
-

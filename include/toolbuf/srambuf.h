@@ -2,13 +2,9 @@
 #define _SRAMBUFFER_H_
 
 
-#ifndef TOOLBUF_DLL
-	#define TOOLBUF_DLL  __declspec(dllimport)
-#endif
-
 #include "bufferbase.h"
 
-class TOOLBUF_DLL CSramBuf : public CBufferBase
+class CSramBuf : public CBufferBase
 {
 public:
 	CSramBuf(int size = BUFFER_DEFAULT_SIZE, int unit = 1);
@@ -31,6 +27,5 @@ private:
 	int m_end;
 };
 
+
 #endif
-
-

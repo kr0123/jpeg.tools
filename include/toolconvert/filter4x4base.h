@@ -2,12 +2,6 @@
 #define _FILTER_4X4_BASE_H_
 
 
-#ifndef TOOLCONVERT_DLL
-	#define TOOLCONVERT_DLL  __declspec(dllimport)
-#endif
-
-
-
 //==========================================================
 //
 //		class CFilter4X4Base
@@ -259,5 +253,3 @@ void CFILTERBASE::GetNextBlock(void)
 
 
 #endif
-
-

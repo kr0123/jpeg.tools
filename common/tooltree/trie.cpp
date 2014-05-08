@@ -106,7 +106,9 @@ TrieNode *CTrie::MatchPrefix(char c, TrieNode * tmpNode)
 
 TrieNode * CTrie::ConstructNode(const char *word, unsigned int i, const char *leafValue)
 {
-	ASSERT( MAX_WORD_LENGTH >= strlen(leafValue));
+	if(MAX_WORD_LENGTH >= strlen(leafValue))
+		return NULL;
+
 	TrieNode *p = new TrieNode;
 	
 	if ( i >= strlen(word) )

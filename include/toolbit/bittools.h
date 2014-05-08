@@ -2,13 +2,7 @@
 #define _BITTOOLS_H_
 
 
-#ifndef TOOLBIT_DLL
-	#define TOOLBIT_DLL  __declspec(dllimport)
-#endif
-
-
-
-class TOOLBIT_DLL CBitTools
+class CBitTools
 {
 public:
 	CBitTools(char chk = -1, char fill = 0, int chken = 0);
@@ -44,6 +38,5 @@ private:
 	int  m_chken;
 };
 
+
 #endif
-
-

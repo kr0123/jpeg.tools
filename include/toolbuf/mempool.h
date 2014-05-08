@@ -1,12 +1,8 @@
 #ifndef _MEMORY_POOL_H_
 #define _MEMORY_POOL_H_
 
-
-#ifndef TOOLBUF_DLL
-	#define TOOLBUF_DLL  __declspec(dllimport)
-#endif
-
 #include "bufferbase.h"
+
 
 typedef struct tag_TChunk
 {
@@ -14,7 +10,7 @@ typedef struct tag_TChunk
 	int nextpos;
 } TChunk, *PTChunk;
 
-class TOOLBUF_DLL CMemPool : public CBufferBase
+class CMemPool : public CBufferBase
 {
 public:
 	CMemPool(int size = BUFFER_DEFAULT_SIZE, int unit = 1);
@@ -32,6 +28,5 @@ private:
 	void	Init(void);
 };
 
+
 #endif
-
-

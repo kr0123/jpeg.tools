@@ -2,15 +2,10 @@
 #define _TYPEPROP_H_
 
 
-#ifndef TOOLS_DLL
-	#define TOOLS_DLL  __declspec(dllimport)
-#endif
-
-
 #include "global.h"
 
 
-class TOOLS_DLL CTypeProp
+class CTypeProp
 {
 public:
 	int		getVwc(int width, int height, int format, int unit = 1);
@@ -19,6 +14,5 @@ public:
 
 };
 
+
 #endif
-
-

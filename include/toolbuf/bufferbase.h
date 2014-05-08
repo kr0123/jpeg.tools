@@ -2,14 +2,9 @@
 #define _BUFFERBASE_H_
 
 
-#ifndef TOOLBUF_DLL
-	#define TOOLBUF_DLL  __declspec(dllimport)
-#endif
-
-
 #include "tools/baseitem.h"
 
-class TOOLBUF_DLL CMemBase : public CBaseItem
+class CMemBase : public CBaseItem
 {
 public:
 	CMemBase(int size = 0, int unit = 1);
@@ -45,9 +40,7 @@ private:
 	char	*m_MemPool;
 };
 
-//=================================================
-
-class TOOLBUF_DLL CBufferBase : public CMemBase
+class CBufferBase : public CMemBase
 {
 public:
 	CBufferBase(int size = BUFFER_DEFAULT_SIZE, int unit = 1);
@@ -56,5 +49,3 @@ public:
 
 
 #endif
-
-

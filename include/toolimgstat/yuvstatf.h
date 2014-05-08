@@ -2,15 +2,9 @@
 #define __TOOLIMGSTAT_YUVSTATF_H__
 
 
-
-#ifndef TOOLIMGSTAT_DLL
-	#define TOOLIMGSTAT_DLL  __declspec(dllimport)
-#endif
-
-
 #include "yuvstat.h"
 
-class TOOLIMGSTAT_DLL CYuvStatF : public CYuvStat
+class CYuvStatF : public CYuvStat
 {
 public:
 	CYuvStatF(void);
@@ -27,5 +21,6 @@ protected:
 	void updateYuv(int * des, int * ndes);
 	
 };
+
 
 #endif

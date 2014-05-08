@@ -2,13 +2,12 @@
 #define _MATRIXTOOLS_H_
 
 
-#ifndef TOOLMATH_DLL
-	#define TOOLMATH_DLL  __declspec(dllimport)
-#endif
+#include "tools/type.h"
+#include "toolfile/filebin.h"
+#include "baseconvert.h"
 
 
-
-class TOOLMATH_DLL CBaseMat
+class CBaseMat
 {
 protected:
 	virtual int		RevOrder(int *ary, int n);
@@ -481,7 +480,6 @@ void CMATRIXTOOL::Div(T1 a)
 	int i, j, pos = 0;
 	T2 gap = 0;
 
-//	ASSERT(a);
 	if(a == 0)
 		a = 1;
 	if(this->m_mode == MTX_ADDHALF)

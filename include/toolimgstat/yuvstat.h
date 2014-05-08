@@ -2,15 +2,9 @@
 #define __TOOLIMGSTAT_YUVSTAT_H__
 
 
-
-#ifndef TOOLIMGSTAT_DLL
-	#define TOOLIMGSTAT_DLL  __declspec(dllimport)
-#endif
-
-
 #include "toolmath/baseconvert.h"
 
-class TOOLIMGSTAT_DLL CYuvStat : public CBaseConvert
+class CYuvStat : public CBaseConvert
 {
 public:
 	CYuvStat(void);

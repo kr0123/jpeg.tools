@@ -2,10 +2,6 @@
 #define _FILEBASE_H_
 
 
-#ifndef TOOLFILE_DLL
-	#define TOOLFILE_DLL  __declspec(dllimport)
-#endif
-
 #include "tools/baseitem.h"
 
 enum FILE_OPMODEenum
@@ -23,7 +19,7 @@ enum FILE_OPMODEenum
 //	suggestiong:
 //	this class only support bin file mode, read or write not append
 //
-class TOOLFILE_DLL CFileBase : public CBaseObject
+class CFileBase : public CBaseObject
 {
 public:
 	CFileBase(char *filename = NULL, char *rwmode = "rb");
@@ -57,6 +53,5 @@ private:
 	int m_rwmode;
 };
 
+
 #endif
-
-

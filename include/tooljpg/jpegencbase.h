@@ -3,11 +3,6 @@
 #define _TOOLS_JPEGENC_BASE_H_
 
 
-#ifndef TOOLJPG_DLL
-	#define TOOLJPG_DLL  __declspec(dllimport)
-#endif
-
-
 #include "jpegbase.h"
 #include "toolbit/bitfifo.h"
 #include "toolmath/basemath.h"
@@ -15,6 +10,7 @@
 
 
 #define ABRC_B			273
+
 enum RUDEBRCMODEenum {
 	RUDEBRC_ZERO,
 	RUDEBRC_QUAR,
@@ -53,7 +49,7 @@ typedef struct tag_TRudebrcOption {
 //		CJpegEncBase class
 //
 //===================================================
-class TOOLJPG_DLL CJpegEncBase : public CBitFifo, public CJpegBase, public CBaseMath
+class CJpegEncBase : public CBitFifo, public CJpegBase, public CBaseMath
 {
 public:
 	CJpegEncBase(int size = DEFAULT_JPEGDATASIZE);
@@ -108,4 +104,3 @@ protected:
 
 
 #endif
-

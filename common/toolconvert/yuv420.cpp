@@ -750,20 +750,7 @@ int CYuv420::Rgb2Jpeg420(char *src, char *dest, int width, int height, int unit,
 	len =  this->Blk2Jpeg(tmpbuf.m_buf, dest, width, height, qf);
 	return len;
 }
-	
-int CYuv420::Blk2Mpeg2I(char *src, char *dest, int width, int height)
-{
-	CMpeg2IEncoder enc;
-	int len;
 
-	enc.Open();
-	enc.SetImageSize(width, height);
-	enc.SetYuvFmt(YUV420BLK);
-	len = enc.getVwc();
-	enc.Write(src, len);
-	len = enc.Read(dest, len);
-	return len;
-}
 
 //=======================================================
 //

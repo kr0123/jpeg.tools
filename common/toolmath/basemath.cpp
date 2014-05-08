@@ -126,7 +126,6 @@ void CBaseMath::Div(char *src1, char *src2, char *result, char *res,
 		n4 = n2;
 	n1 = this->getDataLen(sbuf1, n1);
 	n2 = this->getDataLen(sbuf2, n2);
-	//ASSERT(n2);
 	if(n2 == 0)
 	{
 		memset(res, 0, n4);

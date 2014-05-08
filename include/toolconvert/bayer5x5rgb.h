@@ -2,11 +2,6 @@
 #define _BAYER_5X5_RGB_H_
 
 
-#ifndef TOOLCONVERT_DLL
-	#define TOOLCONVERT_DLL  __declspec(dllimport)
-#endif
-
-
 #include "LineBayerBuf.h"
 //============================
 //
@@ -15,7 +10,7 @@
 //===============================
 #define LAST5X5LINES	BIT6
 
-class TOOLCONVERT_DLL C5x5Base
+class C5x5Base
 {
 public:
 	C5x5Base(int width = 128, int unit = 1);
@@ -51,6 +46,5 @@ private:
 	int			m_Gfirst, m_GBline;
 };
 
+
 #endif
-
-

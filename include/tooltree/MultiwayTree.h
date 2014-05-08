@@ -75,4 +75,6 @@ CMultiwayTree<T>* CMultiwayTree<T>::LastSibling()
 	while(t->sibling) t = t->sibling;
 	return t;
 }
+
+
 #endif

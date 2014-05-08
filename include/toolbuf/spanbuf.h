@@ -2,14 +2,9 @@
 #define _SPANBUF_H_
 
 
-#ifndef TOOLBUF_DLL
-	#define TOOLBUF_DLL  __declspec(dllimport)
-#endif
-
-
 #include "srambuf.h"
 
-class TOOLBUF_DLL CSpanBuf : public CSramBuf
+class CSpanBuf : public CSramBuf
 {
 public:
 	CSpanBuf(int size = BUFFER_DEFAULT_SIZE, int unit = 1);
@@ -34,6 +29,5 @@ private:
 	int		m_span, m_skip, m_start;
 };
 
+
 #endif
-
-

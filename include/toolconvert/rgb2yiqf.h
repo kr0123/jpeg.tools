@@ -2,13 +2,9 @@
 #define _RGB2YIQF_H_
 
 
-#ifndef TOOLCONVERT_DLL
-	#define TOOLCONVERT_DLL  __declspec(dllimport)
-#endif
-
 #include "rgb2yiq.h"
 
-class TOOLCONVERT_DLL CRgb2yiqF : public CRgb2yiq
+class CRgb2yiqF : public CRgb2yiq
 {
 public:
 	CRgb2yiqF();
@@ -20,7 +16,6 @@ public:
 private:
 	CDbugTools	m_dbug;
 };
-
 
 
 #endif

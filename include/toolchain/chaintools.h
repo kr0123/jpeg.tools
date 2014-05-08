@@ -1,10 +1,12 @@
 #ifndef _CHAIN_TOOLS_H_
 #define _CHAIN_TOOLS_H_
 
+
 #include "tools/global.h"
 
 #define TEMPLATE_CHAIN		template <class T> 
 #define CCHAINTOOL			CChainTool <T>
+
 
 TEMPLATE_CHAIN
 class  CChainTool
@@ -42,8 +44,6 @@ private:
 	TChain m_chain;
 	int m_count;
 };
-
-
 
 TEMPLATE_CHAIN
 CCHAINTOOL::CChainTool(void)
@@ -258,6 +258,5 @@ T* CCHAINTOOL::GetNextUnit(T* unit)
 	return ptr->pcur;
 }
 
+
 #endif
-
-

@@ -2,12 +2,9 @@
 #define _RAW2RGB_H_
 
 
-#ifndef TOOLCONVERT_DLL
-	#define TOOLCONVERT_DLL  __declspec(dllimport)
-#endif
 #include "toolmath/yuv2rgb.h"
 
-class TOOLCONVERT_DLL CRaw2Rgb : public CYuv2Rgb
+class CRaw2Rgb : public CYuv2Rgb
 {
 public:
 	int Rgb2GB(char *src, char *dst, int width, int height, int unit = 1);
@@ -95,5 +92,3 @@ protected:
 
 
 #endif
-
-

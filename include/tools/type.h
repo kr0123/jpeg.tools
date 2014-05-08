@@ -1,5 +1,4 @@
 
-
 #ifndef _TOOLS_TYPE_H_
 #define _TOOLS_TYPE_H_
 
@@ -611,6 +610,5 @@ enum NTSCPALSIZEenum {
 
 #define BUFFER_DEFAULT_SIZE		0x1000
 
+
 #endif
-
-

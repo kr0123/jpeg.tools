@@ -2,13 +2,9 @@
 #define _COMPRESS_BITFIFO_H_
 
 
-#ifndef TOOLBIT_DLL
-	#define TOOLBIT_DLL  __declspec(dllimport)
-#endif
-
 #include "bitfifo.h"
 
-class TOOLBIT_DLL CJmBitFifo : public CBitFifo
+class CJmBitFifo : public CBitFifo
 {
 public:
 	CJmBitFifo(int size = BUFFER_DEFAULT_SIZE, int order = BIGBIT_ORDER);
@@ -18,6 +14,5 @@ public:
 	virtual int		Read(char *buf, int len);	//return bytelen
 };
 
+
 #endif
-
-

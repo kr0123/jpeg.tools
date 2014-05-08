@@ -2,14 +2,7 @@
 #define _CHARTOOLS_H_
 
 
-#ifndef TOOLCHAR_DLL
-	#define TOOLCHAR_DLL  __declspec(dllimport)
-#endif
-
-
-
-
-class TOOLCHAR_DLL CCharTools
+class CCharTools
 {
 public:
 	int		Char2Hex(char a, int *x);
@@ -24,5 +17,3 @@ public:
 
 
 #endif
-
-

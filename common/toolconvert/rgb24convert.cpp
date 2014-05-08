@@ -28,7 +28,15 @@ int CRgb24Convert::Rgb24_Img(char *src, char *dest, int width, int height, int f
 		width = CYuv400::MRgb2Yuv400(src, dest, width, height);
 		break;
 	case YUV444:
+#if 1
+		{
+			CYuv444 *yuv444 = new CYuv444;
+			width = yuv444->MRgb2Yuv444(src, dest, width, height);
+			delete yuv444;			
+		}
+#else
 		width = CYuv444::MRgb2Yuv444(src, dest, width, height);
+#endif
 		break;
 	case RGB24:
 		width *= height * 3;
@@ -90,7 +98,15 @@ int CRgb24Convert::Img2Rgb24(char *src, char *dest, int width, int height, int f
 		width = CYuv400::MYuv400_Rgb(src, dest, width, height);
 		break;
 	case YUV444:
+#if 1
+		{
+			CYuv444 *yuv444 = new CYuv444;
+			width = yuv444->MYuv444_Rgb(src, dest, width, height);
+			delete yuv444;			
+		}
+#else
 		width = CYuv444::MYuv444_Rgb(src, dest, width, height);
+#endif
 		break;
 	case RGB24:
 		width *= height * 3;

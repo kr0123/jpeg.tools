@@ -2,14 +2,9 @@
 #define _UNIT_FIFO_BUFFER_H_
 
 
-#ifndef TOOLBUF_DLL
-	#define TOOLBUF_DLL  __declspec(dllimport)
-#endif
-
-
 #include "fifobuf.h"
 
-class TOOLBUF_DLL CUfifoBuf : public CFifoBuf
+class CUfifoBuf : public CFifoBuf
 {
 public:
 	CUfifoBuf(int size = BUFFER_DEFAULT_SIZE, int unit = 1);
@@ -27,6 +22,5 @@ public:
 	int		Read(int len);
 };
 
+
 #endif
-
-

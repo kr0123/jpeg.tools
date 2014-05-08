@@ -2,13 +2,9 @@
 #define _YUV422F_H_
 
 
-#ifndef TOOLCONVERT_DLL
-	#define TOOLCONVERT_DLL  __declspec(dllimport)
-#endif
-
 #include "yuv422.h"
 
-class TOOLCONVERT_DLL CYuv422F : public CYuv422
+class CYuv422F : public CYuv422
 {
 public:
 	void Rgb2Yyuv(char *src, char *dest, int width, int height, int unit = 1);
@@ -244,5 +240,3 @@ private:
 
 
 #endif
-
-

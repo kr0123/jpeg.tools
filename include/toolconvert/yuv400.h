@@ -2,14 +2,9 @@
 #define _YUV400_H_
 
 
-#ifndef TOOLCONVERT_DLL
-	#define TOOLCONVERT_DLL  __declspec(dllimport)
-#endif
-
 #include "yuv444.h"
 
-
-class TOOLCONVERT_DLL CYuv400 : public CYuv444
+class CYuv400 : public CYuv444
 {
 public:
 	int Rgb2Yuv400(char *src, char *dst, int cap = 256, int unit = 1);
@@ -62,5 +57,3 @@ protected:
 
 
 #endif
-
-

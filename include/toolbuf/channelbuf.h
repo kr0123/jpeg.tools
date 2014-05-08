@@ -2,16 +2,11 @@
 #define _CHANNEL_BUFFER_H_
 
 
-#ifndef TOOLBUF_DLL
-	#define TOOLBUF_DLL  __declspec(dllimport)
-#endif
-
-
 #define DEFAULT_CHANNEL_SIZE	0x100
 
 #include "srambuf.h"
 
-class TOOLBUF_DLL CChannelBuf : public CSramBuf
+class CChannelBuf : public CSramBuf
 {
 public:
 	CChannelBuf(int size = DEFAULT_CHANNEL_SIZE, int unit = 1);
@@ -30,6 +25,5 @@ private:
 	int		m_point;
 };
 
+
 #endif
-
-

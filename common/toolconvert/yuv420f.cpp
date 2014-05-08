@@ -947,32 +947,6 @@ void CYuv420F::Blk2Jpeg(char *src, char *dest, int width, int height, int qf)
 
 //=======================================================
 //
-//		YUV420 Mpeg2 I frame encode
-//
-//=======================================================
-void CYuv420F::Blk2Mpeg2I(char *src, char *dest, int width, int height)
-{
-	CFileBin fsrc, fdst;
-	CBufferBase srcbuf, dstbuf;
-	int size;
-
-	size = CYuv420::getVwc(width, height);
-	srcbuf.SetSize(size);
-	dstbuf.SetSize(size);
-	if( (srcbuf.GetTotalSize() == 0) && (dstbuf.GetTotalSize() == 0) )
-	{
-		this->m_dbug.PrintMsg("Can not allocate so big buffer\n");
-		return;
-	}
-	fsrc.Open(src);
-	fsrc.Read(srcbuf.m_buf, size);
-	size = CYuv420::Blk2Mpeg2I(srcbuf.m_buf, dstbuf.m_buf, width, height);
-	fdst.Open(dest, "wb");
-	fdst.Write(dstbuf.m_buf, size);
-}
-
-//=======================================================
-//
 //		YUV420 to frame
 //
 //=======================================================

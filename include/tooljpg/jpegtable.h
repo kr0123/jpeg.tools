@@ -1,11 +1,6 @@
-
 #ifndef _TOOLS_JPEGTABLE_H_
 #define _TOOLS_JPEGTABLE_H_
 
-
-#ifndef TOOLJPG_DLL
-	#define TOOLJPG_DLL  __declspec(dllimport)
-#endif
 
 #include "tools/global.h"
 
@@ -16,19 +11,20 @@ typedef struct tag_THuffValue
 	int		length;
 } THuffValue, *PTHuffValue;
 
-extern TOOLJPG_DLL const UINT8 gJpegDefaultLumTbl[];
-extern TOOLJPG_DLL const UINT8 gDefaultLumTbl[];
-extern TOOLJPG_DLL const UINT8 gJpegDefaultChrTbl[];
-extern TOOLJPG_DLL const UINT8 gDefaultChrTbl[];
-extern TOOLJPG_DLL const UINT8 gZigZag[];
-extern  TOOLJPG_DLL const unsigned char gAlterZigZag[2][64];
-extern TOOLJPG_DLL const UINT8 gDefaultHuffmanTbl[];
-extern TOOLJPG_DLL const UINT8 gJpegDefaultImgpara[]; 
-extern TOOLJPG_DLL const int gDctMatrix[];
-extern TOOLJPG_DLL const int gInvTable[];
 
-extern TOOLJPG_DLL const int gDefHuffTblSize;
-extern TOOLJPG_DLL const int gJpegImgparaSize;
+extern const UINT8 gJpegDefaultLumTbl[];
+extern const UINT8 gDefaultLumTbl[];
+extern const UINT8 gJpegDefaultChrTbl[];
+extern const UINT8 gDefaultChrTbl[];
+extern const UINT8 gZigZag[];
+extern const unsigned char gAlterZigZag[2][64];
+extern const UINT8 gDefaultHuffmanTbl[];
+extern const UINT8 gJpegDefaultImgpara[]; 
+extern const int gDctMatrix[];
+extern const int gInvTable[];
+
+extern const int gDefHuffTblSize;
+extern const int gJpegImgparaSize;
+
 
 #endif
-

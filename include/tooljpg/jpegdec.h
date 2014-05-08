@@ -3,12 +3,6 @@
 #define _TOOLS_JPEGDEC_H_
 
 
-#ifndef TOOLJPG_DLL
-	#define TOOLJPG_DLL  __declspec(dllimport)
-#endif
-
-
-
 #include "jpegdecbase.h"
 
 //===================================================
@@ -18,7 +12,7 @@
 //===================================================
 
 
-class TOOLJPG_DLL CJpegDecoder : public CJpegDecBase
+class CJpegDecoder : public CJpegDecBase
 {
 public:
 	CJpegDecoder(int size = DEFAULT_JPEGDATASIZE);
@@ -39,7 +33,7 @@ protected:
 //===================================================
 
 
-class TOOLJPG_DLL CJpegDecoder1 : public CJpegDecBase
+class CJpegDecoder1 : public CJpegDecBase
 {
 public:
 	CJpegDecoder1(int size = DEFAULT_JPEGDATASIZE);
@@ -63,7 +57,7 @@ private:
 //
 //===================================================
 
-class TOOLJPG_DLL CJpegDecoder2 : public CJpegDecBase
+class CJpegDecoder2 : public CJpegDecBase
 {
 public:
 	CJpegDecoder2(int size = DEFAULT_JPEGDATASIZE);
@@ -77,5 +71,6 @@ protected:
 private:
 	int		m_LQtbl[64], m_CQtbl[64];
 };
+
 
 #endif

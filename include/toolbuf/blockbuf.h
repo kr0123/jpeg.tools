@@ -2,13 +2,9 @@
 #define _BLOCKBUFFER_H_
 
 
-#ifndef TOOLBUF_DLL
-	#define TOOLBUF_DLL  __declspec(dllimport)
-#endif
-
 #include "srambuf.h"
 
-class TOOLBUF_DLL CBlockBuf : public CSramBuf
+class CBlockBuf : public CSramBuf
 {
 public:
 	CBlockBuf(int block = 0x100, int blocksize = 0x200);
@@ -29,6 +25,5 @@ private:
 	int		m_blocksize;
 };
 
+
 #endif
-
-

@@ -2,14 +2,9 @@
 #define _YUV444_H_
 
 
-#ifndef TOOLCONVERT_DLL
-	#define TOOLCONVERT_DLL  __declspec(dllimport)
-#endif
-
-
 #include "toolmath/yuv2rgb.h"
 
-class TOOLCONVERT_DLL CYuv444 : public CYuv2Rgb
+class CYuv444 : public CYuv2Rgb
 {
 public:
 	int Rgb2Yuv444(char *src, char *dst, int cap = 256, int unit = 1);
@@ -43,7 +38,7 @@ protected:
 	void Yuv444ZinHorResize(char *src, char *dst, int srcw, int srch, int dstw, int unit = 1);
 	void Yuv444ZinVerResize(char *src, char *dst, int srcw, int srch, int dsth, int unit = 1);
 
-protected:
+public:
 	int MRgb2Yuv444(char *src, char *dst, int width, int height, int cap = 256, int unit = 1);
 	int MYuv444_Rgb(char *src, char *dst, int width, int height, int cap = 256, int unit = 1);
 	int MYuv444Sizer(char *src, char *dest, int srcw, int dstw, int dsth, 
@@ -58,5 +53,3 @@ protected:
 
 
 #endif
-
-

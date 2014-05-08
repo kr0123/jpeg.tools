@@ -2,17 +2,13 @@
 #define _MX_DCT_H_
 
 
-#ifndef TOOLMATH_DLL
-	#define TOOLMATH_DLL  __declspec(dllimport)
-#endif
-
 #include "toolmath/matrixtool.h"
 
 #define CBASEMATRIX	CMatrixTool<double, double>
 
 #define CBASEMATRIX1 CMatrixTool<int, int>
 
-class TOOLMATH_DLL CDctEnc : public CBASEMATRIX
+class CDctEnc : public CBASEMATRIX
 {
 public:
 	CDctEnc();
@@ -33,7 +29,7 @@ private:
 };
 
 
-class TOOLMATH_DLL CDctDec : public CBASEMATRIX
+class CDctDec : public CBASEMATRIX
 {
 public:
 	CDctDec();
@@ -54,9 +50,7 @@ private:
 };
 
 
-
-
-class TOOLMATH_DLL CDctDec1 : public CBASEMATRIX1
+class CDctDec1 : public CBASEMATRIX1
 {
 public:
 	CDctDec1();
@@ -64,13 +58,11 @@ public:
 
 public:
 	virtual int		Read(int *buf, int len);	
-
-protected:
 	virtual void	fidct8x8(int *inblk);
 };
 
 
-class TOOLMATH_DLL CDctEnc1 : public CBASEMATRIX1
+class CDctEnc1 : public CBASEMATRIX1
 {
 public:
 	CDctEnc1();

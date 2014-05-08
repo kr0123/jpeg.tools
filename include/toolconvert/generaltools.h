@@ -2,11 +2,6 @@
 #define _GENERALTOOLS_H_
 
 
-#ifndef TOOLCONVERT_DLL
-	#define TOOLCONVERT_DLL  __declspec(dllimport)
-#endif
-
-
 #include "normaltools.h"
 #include "raw2rgbf.h"
 #include "yuv422f.h"
@@ -18,15 +13,15 @@
 #include "yiq2rgbf.h"
 
 #include "tooljpg/jpegf.h"
-#include "toolmpeg2i/mpeg2if.h"
-#include "toolmpeg4/mpeg4f.h"
+
+
 
 #define ERROR_VALUE		0xffffffff
 
-class TOOLCONVERT_DLL CGeneralTools : public CNormalTools, public CRaw2RgbF,
-					public CYuv422F, public CYuv420F, public CYuv444F, 
-					public CYuv411F, public CYuv400F, public CJpegF, public CMpeg2IF,
-					public CRgb2yiqF, public CYiq2rgbF, public CMpeg4F
+class CGeneralTools : public CNormalTools, public CRaw2RgbF,
+					public CYuv422F, public CYuv420F, public CYuv444F,
+					public CYuv411F, public CYuv400F, public CJpegF,
+					public CRgb2yiqF, public CYiq2rgbF
 {
 public:
 	void	DataConvert(char *src, char *dest, int width, int height, 
@@ -148,12 +143,6 @@ public:
 	void	JpegConvert(char *src, char *dest, int dstfmt);
 
 public:
-	void	Mpeg2Convert(char *src, char *dest);
-
-public:
-	void	Mpeg4Convert(char *src, char *dest);
-
-public:
 	void	ImageRotate(char *src, char *dest, int width, int height, int fmt, int rotate, int unit = 1);
 
 private:
@@ -162,5 +151,3 @@ private:
 
 
 #endif
-
-

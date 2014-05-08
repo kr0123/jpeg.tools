@@ -2,18 +2,13 @@
 #define _RGB2YIQ_H_
 
 
-#ifndef TOOLCONVERT_DLL
-	#define TOOLCONVERT_DLL  __declspec(dllimport)
-#endif
-
-
 #include "toolbuf/fifobuf.h"
 
 //#define IMAGEWIDTH 640
 //#define IMAGEHEIGHT 480
 
 //=============== class CRgb2yiq =================
-class TOOLCONVERT_DLL CRgb2yiq : public CFifoBuf
+class CRgb2yiq : public CFifoBuf
 {
 public:
 	CRgb2yiq(int cap = 256, int width = 640, int height = 480);
@@ -53,6 +48,5 @@ private:
 	int  m_gamSlope[9];
 };
 
+
 #endif
-
-

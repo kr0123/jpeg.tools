@@ -3,14 +3,10 @@
 #define _FILEBIN_H_
 
 
-#ifndef TOOLFILE_DLL
-	#define TOOLFILE_DLL  __declspec(dllimport)
-#endif
-
 #include "filebase.h"
 #include "toolbuf/bufferbase.h"
 
-class TOOLFILE_DLL CFileBin : public CFileBase, public CBufferBase
+class CFileBin : public CFileBase, public CBufferBase
 {
 public:
 	CFileBin(char *filename = NULL, char *rwmode = "rb", int size = BUFFER_DEFAULT_SIZE);
@@ -33,6 +29,5 @@ private:
 	int m_rpoint;
 };
 
+
 #endif
-
-

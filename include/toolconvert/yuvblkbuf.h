@@ -1,18 +1,12 @@
-
-
 #ifndef _CMODEL_YUVBLKBUF_ALG_H_
 #define _CMODEL_YUVBLKBUF_ALG_H_
 
-
-#ifndef TOOLCONVERT_DLL
-	#define TOOLCONVERT_DLL  __declspec(dllimport)
-#endif
 
 #include "toolbuf/srambuf.h"
 
 //class CYuvBlkBufBase
 
-class TOOLCONVERT_DLL CYuvBlkBufBase : public CSramBuf
+class CYuvBlkBufBase : public CSramBuf
 {
 public:
 	CYuvBlkBufBase(char fmt = YUV422_UYVY, int width = 128, int unit = 1);
@@ -48,7 +42,7 @@ public:
 
 //class CYuv2BlkBuf
 
-class TOOLCONVERT_DLL CYuv2BlkBuf : public CYuvBlkBufBase
+class CYuv2BlkBuf : public CYuvBlkBufBase
 {
 public:
 	CYuv2BlkBuf(char fmt = YUV422_UYVY, int width = 128, int unit = 1);
@@ -87,7 +81,7 @@ private:
 
 //class CBlk2YuvBuf
 
-class TOOLCONVERT_DLL CBlk2YuvBuf : public CYuvBlkBufBase
+class CBlk2YuvBuf : public CYuvBlkBufBase
 {
 public:
 	CBlk2YuvBuf(char fmt = YUV422_UYVY, int width = 128, int unit = 1);
@@ -115,5 +109,6 @@ private:
 	void		WriteBlk411Seg(char *buf);
 	void		WriteBlk400Seg(char *buf);
 };
+
 
 #endif

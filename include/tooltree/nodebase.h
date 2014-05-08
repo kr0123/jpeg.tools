@@ -2,18 +2,13 @@
 #define _NODEBASE_H_
 
 
-#ifndef TOOLTREE_DLL
-	#define TOOLTREE_DLL  __declspec(dllimport)
-#endif
-
-
 enum KEYNODEPROPenum
 {
 	LEAF_NODE,
 	NODE_NODE
 };
 
-class TOOLTREE_DLL CNodeBase
+class CNodeBase
 {
 public:
 	CNodeBase(void);
@@ -29,4 +24,3 @@ private:
 
 
 #endif
-

@@ -22,7 +22,8 @@ void CBitFifo::SetSize(int size)
 
 void CBitFifo::SetSize(char *buf, int size)
 {
-	ASSERT(size < sizeof(int));
+	if(size < sizeof(int))
+		return;
 	CBitStream::SetSize(buf, size-sizeof(int));
 	this->ClearPoint();
 }

@@ -2,13 +2,9 @@
 #define _JPEGPARSE_H_
 
 
-#ifndef TOOLJPG_DLL
-	#define TOOLJPG_DLL  __declspec(dllimport)
-#endif
-
 #include "tools/global.h"
 
-class TOOLJPG_DLL CJpegParse
+class CJpegParse
 {
 public:
 	void	JpegParse(unsigned char *ptr, int length, PTJpegIndex pinfo);
@@ -43,9 +39,4 @@ private:
 };
 
 
-
-
 #endif
-
-
-

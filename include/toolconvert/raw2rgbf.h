@@ -2,15 +2,11 @@
 #define _RAW2RGBF_H_
 
 
-#ifndef TOOLCONVERT_DLL
-	#define TOOLCONVERT_DLL  __declspec(dllimport)
-#endif
-
 #include "raw2rgb.h"
 #include "toolfile/filebin.h"
 #include "toolfile/dbugtools.h"
 
-class TOOLCONVERT_DLL CRaw2RgbF : public CRaw2Rgb
+class CRaw2RgbF : public CRaw2Rgb
 {
 public:
 	void Rgb2GB(char *src, char *dest, int width, int height, int unit = 1);
@@ -125,5 +121,3 @@ private:
 
 
 #endif
-
-

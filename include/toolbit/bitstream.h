@@ -1,11 +1,6 @@
 #ifndef _BITSTREAM_H_
 #define _BITSTREAM_H_
 
-#ifndef TOOLBIT_DLL
-	#define TOOLBIT_DLL  __declspec(dllimport)
-#endif
-
-
 
 #include "toolbuf/srambuf.h"
 #include "bittools.h"
@@ -17,7 +12,7 @@ enum BITORDERenum
 };
 
 
-class TOOLBIT_DLL CBitStream : public CSramBuf, public CBitTools
+class CBitStream : public CSramBuf, public CBitTools
 {
 public:
 	CBitStream(int size = BUFFER_DEFAULT_SIZE, int order = SMALLBIT_ORDER);
@@ -41,6 +36,5 @@ private:
 	int		m_bitorder;
 };
 
+
 #endif
-
-

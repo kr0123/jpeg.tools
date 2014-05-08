@@ -2,10 +2,6 @@
 #define _CHARNODE_H_
 
 
-#ifndef TOOLCHAR_DLL
-	#define TOOLCHAR_DLL  __declspec(dllimport)
-#endif
-
 #include "tooltree/nodebase.h"
 #include "toolchain/chaintools.h"
 
@@ -46,7 +42,7 @@ enum CHARFILTERenum
 
 //=================================
 
-class TOOLCHAR_DLL CCharNode : public CNodeBase
+class CCharNode : public CNodeBase
 {
 public:
 	CCharNode(void);
@@ -77,5 +73,5 @@ private:
 	CChainTool<CCharNode>	m_misc;
 };
 
-#endif
 
+#endif

@@ -3,10 +3,6 @@
 #define _TOOLS_JPEGDEC_BASE_H_
 
 
-#ifndef TOOLJPG_DLL
-	#define TOOLJPG_DLL  __declspec(dllimport)
-#endif
-
 #include "jpegbase.h"
 #include "jpegparse.h"
 #include "toolbuf/fifobuf.h"
@@ -14,8 +10,7 @@
 #include "toolfile/dbugtools.h"
 
 
-
-class TOOLJPG_DLL CJpegDecBase : public CFifoBuf, public CJpegBase, public CJpegParse
+class CJpegDecBase : public CFifoBuf, public CJpegBase, public CJpegParse
 {
 public:
 	CJpegDecBase(int size = DEFAULT_JPEGDATASIZE);
@@ -40,5 +35,5 @@ protected:
 	CDbugTools	m_dbug;
 };
 
-#endif
 
+#endif

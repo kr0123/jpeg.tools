@@ -1,27 +1,11 @@
 #ifndef _TOOLCONVERT_INTERNAL_H_
 #define _TOOLCONVERT_INTERNAL_H_
 
-#ifdef _WINDLL
-	#define TOOLCONVERT_DLL  __declspec(dllexport)
-#endif
-
-#pragma comment(lib, "tools.lib")
-#pragma comment(lib, "toolchar.lib")
-#pragma comment(lib, "toolfile.lib")
-#pragma comment(lib, "toolbit.lib")
-#pragma comment(lib, "toolbuf.lib")
-#pragma comment(lib, "toolmath.lib")
-#pragma comment(lib, "tooljpg.lib")
-#pragma comment(lib, "toolmpeg2i.lib")
-#pragma comment(lib, "toolmpeg4.lib")
-
 
 #include "toolbit/bittools.h"
 #include "toolbit/bitfifo.h"
 
 #include "tooljpg/jpegenc.h"
-
-#include "toolmpeg2i/mpeg2ienc.h"
 
 #include "toolconvert/normaltools.h"
 #include "toolconvert/linebayerbuf.h"

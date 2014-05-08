@@ -2,10 +2,6 @@
 #define _STRINGTOOLS_H_
 
 
-#ifndef TOOLCHAR_DLL
-	#define TOOLCHAR_DLL  __declspec(dllimport)
-#endif
-
 #include "chartools.h"
 
 
@@ -25,7 +21,7 @@ enum STRINGSTATEenum {
 	STRING_FAILED
 };
 
-class TOOLCHAR_DLL CStringTools : public CCharTools
+class CStringTools : public CCharTools
 {
 public:
 	int		Str2Hex(char *str, int *x);
@@ -51,6 +47,5 @@ public:
 	void	AddIndex(char *src, char *dest);
 };
 
+
 #endif
-
-

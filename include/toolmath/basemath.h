@@ -2,12 +2,6 @@
 #define _BASE_MATH_H_
 
 
-
-#ifndef TOOLMATH_DLL
-	#define TOOLMATH_DLL  __declspec(dllimport)
-#endif
-
-
 #define MATH_MAXCOUNT		100
 
 enum MATHDATASIGNenum
@@ -16,7 +10,7 @@ enum MATHDATASIGNenum
 	NEGATIVE_DATA
 };
 
-class TOOLMATH_DLL CBaseMath
+class CBaseMath
 {
 public:
 	CBaseMath();
@@ -34,8 +28,7 @@ public:
 	int  Abs(char *src, char *dst, int n1, int n2 = 0);
 
 protected:
-	int addsub(char *src1, char *src2, char *dst, int n1, int n2, 
-		int n3 = 0, int mode = ADD_OPCODE);
+	int addsub(char *src1, char *src2, char *dst, int n1, int n2, int n3 = 0, int mode = ADD_OPCODE);
 	int	getDataLen(char *src, int len);
 };
 

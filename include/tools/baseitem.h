@@ -2,17 +2,11 @@
 #define _BASEITEM_H_
 
 
-
-#ifndef TOOLS_DLL
-	#define TOOLS_DLL  __declspec(dllimport)
-#endif
-
-
 #include "global.h"
 
 typedef void ChannelCallBack(void);
 
-class TOOLS_DLL CBaseItem
+class CBaseItem
 {
 public:
 	CBaseItem();
@@ -23,7 +17,7 @@ public:
 	virtual int		Write(char *buf, int len);
 };
 
-class TOOLS_DLL CBaseObject : public CBaseItem
+class CBaseObject : public CBaseItem
 {
 public:
 	CBaseObject();
@@ -40,7 +34,7 @@ enum CHNLRWMODEenum {
 	WAITING_MODE,
 };
 
-class TOOLS_DLL CBaseChannel : public CBaseObject
+class CBaseChannel : public CBaseObject
 {
 public:
 	CBaseChannel();
@@ -56,6 +50,5 @@ protected:
 	ChannelCallBack *m_pcall;
 };
 
+
 #endif
-
-

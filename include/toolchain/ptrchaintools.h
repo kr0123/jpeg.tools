@@ -131,6 +131,5 @@ T1* CPCHAINTOOL::operator[](int index)
 	return this->GetUnit(index);
 }
 
+
 #endif
-
-

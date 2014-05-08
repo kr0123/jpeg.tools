@@ -3,10 +3,6 @@
 #define _TOOLS_JPEGBASE_H_
 
 
-#ifndef TOOLJPG_DLL
-	#define TOOLJPG_DLL  __declspec(dllimport)
-#endif
-
 #include "tools/global.h"
 #include "jmmatrix.h"
 #include "jpegtable.h"
@@ -43,7 +39,7 @@ typedef struct tag_TJpegTable
 #define DEFAULT_JPEGINDEX_FILE	"jpgindex.txt"
 #define DEFAULT_JPEGTABLE_FILE	"jpgtable.txt"
 
-class TOOLJPG_DLL CJpegBase : public CJmMatrix
+class CJpegBase : public CJmMatrix
 {
 public:
 	void	PrintJpegIndex(PTJpegIndex pinfo, char *filename = DEFAULT_JPEGINDEX_FILE);
@@ -56,5 +52,5 @@ protected:
 	void	getQTable(int *sfblk, int *LQTable, int *CQTable, int *invTable, int Qfactor);
 };
 
-#endif
 
+#endif

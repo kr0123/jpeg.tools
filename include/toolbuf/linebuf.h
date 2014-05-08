@@ -2,15 +2,11 @@
 #define _LINE_BUFFER_H_
 
 
-#ifndef TOOLBUF_DLL
-	#define TOOLBUF_DLL  __declspec(dllimport)
-#endif
-
 #include "srambuf.h"
 
 #define DEFAULT_LINEBUF_WIDTH	0x1000
 
-class TOOLBUF_DLL CLineBuf : public CSramBuf
+class CLineBuf : public CSramBuf
 {
 public:
 	CLineBuf(int width = DEFAULT_LINEBUF_WIDTH, int edge = 4, int unit = 1);
@@ -39,6 +35,5 @@ protected:
 	int		m_width;
 };
 
+
 #endif
-
-

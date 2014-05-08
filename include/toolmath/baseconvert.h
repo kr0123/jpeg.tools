@@ -2,15 +2,10 @@
 #define _BASE_CONVERT_H_
 
 
-#ifndef TOOLMATH_DLL
-	#define TOOLMATH_DLL  __declspec(dllimport)
-#endif
-
-
 #define MAXFILTERCOUNT	20
 #define MAXCYCLECOUNT	20
 
-class TOOLMATH_DLL CBaseConvert
+class CBaseConvert
 {
 public:
 	int GetMaxDivisor(int a, int b);
@@ -49,6 +44,5 @@ public:
 	int  AdjustImgparm(int *width, int *height, int fmt);
 };
 
+
 #endif
-
-

@@ -37,7 +37,7 @@ int	CDctEnc::Write(double *buf, int len)
 {
 	CBASEMATRIX temp(8, 8);
 
-	__super::Write(buf, len);
+	CBASEMATRIX::Write(buf, len);
 	*this -= 128;
 	temp = this->m_dct;
 	temp *= *this;
@@ -51,12 +51,12 @@ int	CDctEnc::Write(double *buf, int len)
 
 void CDctEnc::operator = (CDctEnc &a)
 {
-	__super::Equ(a);
+	CBASEMATRIX::Equ(a);
 }
 
 void CDctEnc::operator = (double *a)
 {
-	__super::Write(a, 64);
+	CBASEMATRIX::Write(a, 64);
 }
 
 
@@ -315,17 +315,17 @@ int	CDctDec::Read(double *buf, int len)
 	*this /= 1 << 14;
 	*this += 128;
 
-	return __super::Read(buf, len);
+	return CBASEMATRIX::Read(buf, len);
 }
 
 void CDctDec::operator = (CDctDec &a)
 {
-	__super::Equ(a);
+	CBASEMATRIX::Equ(a);
 }
 
 void CDctDec::operator = (double *a)
 {
-	__super::Write(a, 64);
+	CBASEMATRIX::Write(a, 64);
 }
 
 

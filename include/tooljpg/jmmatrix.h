@@ -3,18 +3,12 @@
 #define _TOOLS_JMMATRIX_H_
 
 
-#ifndef TOOLJPG_DLL
-	#define TOOLJPG_DLL  __declspec(dllimport)
-#endif
-
-
-
 //===================================================
 //
 //		CJmMatrix class
 //
 //===================================================
-class TOOLJPG_DLL CJmMatrix
+class CJmMatrix
 {
 protected:
 	void	fpdct8x8(int *inblk, int *oublk);
@@ -57,4 +51,3 @@ protected:
 
 
 #endif
-

@@ -2,13 +2,9 @@
 #define _YUV2RGB_H_
 
 
-#ifndef TOOLMATH_DLL
-	#define TOOLMATH_DLL  __declspec(dllimport)
-#endif
-
 #include "baseconvert.h"
 
-class TOOLMATH_DLL CYuv2Rgb : public CBaseConvert
+class CYuv2Rgb : public CBaseConvert
 {
 public:
 	int  rgb2y(int *bgr, int cap = 256);
@@ -52,5 +48,3 @@ public:
 
 
 #endif
-
-

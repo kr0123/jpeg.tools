@@ -2,12 +2,6 @@
 #define _TRIE_H_
 
 
-#ifndef TOOLTREE_DLL
-	#define TOOLTREE_DLL  __declspec(dllimport)
-#endif
-
-
-
 #define MAX_WORD_LENGTH 128
 
 typedef enum { LEAF, BRANCH } NodeKind;
@@ -24,7 +18,7 @@ struct TrieNode
 	};
 };//TrieNode;
 
-class TOOLTREE_DLL CTrie
+class CTrie
 {
  public:
  	CTrie();
@@ -42,5 +36,5 @@ private:
 	TrieNode* Root;
 };
 
-#endif
 
+#endif

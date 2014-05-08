@@ -3,11 +3,6 @@
 #define _TOOLS_JPEGF_H_
 
 
-#ifndef TOOLJPG_DLL
-	#define TOOLJPG_DLL  __declspec(dllimport)
-#endif
-
-
 #include "toolfile/dbugtools.h"
 #include "jpeg.h"
 
@@ -18,7 +13,7 @@ enum {
 
 #define JPEGF_LIST		"jpgimg.lst"
 
-class TOOLJPG_DLL CJpegF : public CJpeg
+class CJpegF : public CJpeg
 {
 public:
 	int		CheckJpegList(char *list = JPEGF_LIST);
@@ -32,5 +27,5 @@ private:
 	CDbugTools	m_dbug;
 };
 
-#endif
 
+#endif

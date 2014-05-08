@@ -2,14 +2,9 @@
 #define _LINEFIFO_BUFFER_H_
 
 
-#ifndef TOOLBUF_DLL
-	#define TOOLBUF_DLL  __declspec(dllimport)
-#endif
-
-
 #include "ufifobuf.h"
 
-class TOOLBUF_DLL CLineFifo : public CUfifoBuf
+class CLineFifo : public CUfifoBuf
 {
 public:
 	CLineFifo(int width = BUFFER_DEFAULT_SIZE, int unit = 1);
@@ -35,6 +30,5 @@ private:
 	int		m_linewidth;
 };
 
+
 #endif
-
-
